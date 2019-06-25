@@ -13,4 +13,4 @@ def find_number_of_hours(start_time, end_time):
 
 def convert_end_time(end_time):
     end_time += 12
-    return
+    return end_time
