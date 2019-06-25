@@ -1,4 +1,3 @@
-import time
 
 def convert_time(end_time):
     end_time += 12
@@ -13,6 +12,7 @@ def validate_time(time_to_validate):
     string_start_time = time_to_validate
 
     try:
+        import time
         valid_time = time.strptime(string_start_time, valid_format)
         valid = True
     except Exception as e:
@@ -20,7 +20,12 @@ def validate_time(time_to_validate):
         valid = False
 
     results.append(valid)
+
     if valid_time:
-        results.append(valid_time.tm_hour)
+        time = valid_time.tm_hour
+        if time >= 17 or time <= 3:
+            results.append(valid_time.tm_hour)
+        else:
+            results.append("Invalid Time")
 
     return results
