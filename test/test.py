@@ -40,3 +40,11 @@ def test__validate_time_should_return_false_for_fractional_hours():
 
     assert not valid_time
 
+
+def test__validate_time_should_return_true_when_validating_3_00_AM():
+    time = "3:00 AM"
+
+    results = validate_time(time)
+    valid_time = results[0]
+
+    assert not valid_time
