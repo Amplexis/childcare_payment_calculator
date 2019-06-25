@@ -26,6 +26,7 @@ def validate_time(time_to_validate):
         if time >= 17 or time <= 3:
             results.append(valid_time.tm_hour)
         else:
-            results.append("Invalid Time")
+            results[0] = False
+            results.append("Time is out of range")
 
     return results
