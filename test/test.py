@@ -26,3 +26,12 @@ def test__find_number_of_hours_should_return_2_for_2am_thru_4am():
     number_of_hours = find_number_of_hours(start, end)
 
     assert number_of_hours == 2
+
+
+def test__find_number_of_hours_should_return_11_for_5pm_thru_4am():
+    start = 5
+    end = 4
+
+    number_of_hours = find_number_of_hours(start, end)
+
+    assert number_of_hours == 11
