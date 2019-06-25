@@ -1,5 +1,7 @@
-def find_number_of_hours(start_time, end_time):
-    number_of_hours = 0
+from src.models.family_rates import family_a_rates
+
+def find_total_pay(start_time, end_time):
+    total_pay = 0
 
     if start_time in range(1, 5):
         start_time = convert_time(start_time)
@@ -9,9 +11,13 @@ def find_number_of_hours(start_time, end_time):
 
     while start_time < end_time:
         start_time += 1
-        number_of_hours += 1
+        hourly_range_end = start_time
 
-    return number_of_hours
+        for key in family_a_rates:
+            if hourly_range_end in key:
+                total_pay += family_a_rates[key]
+
+    return total_pay
 
 
 def convert_time(end_time):
