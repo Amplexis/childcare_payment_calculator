@@ -1,9 +1,3 @@
-
-def convert_time(end_time):
-    end_time += 12
-    return end_time
-
-
 def validate_time_format(time_to_validate, type):
     results = []
     valid_time = False
