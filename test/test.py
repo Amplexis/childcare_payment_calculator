@@ -1,5 +1,5 @@
 from src.models.time import validate_time_format
-
+from app import calculate_price_for_childcare
 
 def test__validate_time_format_should_return_true_and_int_of_17_when_validating_5_pm_start_time():
     time = "5 pm"
@@ -82,3 +82,12 @@ def test__validate_time_format_should_return_false_for_5_pm_end_time():
     valid_time = results[0]
 
     assert not valid_time
+
+
+def test__should_return_75_for_family_a_from_5_pm_to_10_pm():
+    start = "5 pm"
+    end = "10 pm"
+
+    result = calculate_price_for_childcare(start, end)
+
+    assert result == 75
