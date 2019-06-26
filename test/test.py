@@ -4,7 +4,6 @@ from app import calculate_price_for_childcare
 def test__validate_time_format_should_return_true_and_int_of_17_when_validating_5_pm_start_time():
     time = "5 pm"
     type = "Start"
-    family = "A"
 
     results = validate_time_format(time, type)
     valid_time = results[0]
@@ -17,7 +16,6 @@ def test__validate_time_format_should_return_true_and_int_of_17_when_validating_
 def test__validate_time_format_should_return_false_and_time_out_of_range_when_validating_4_pm_start_time():
     time = "4 pm"
     type = "Start"
-    family = "A"
 
     results = validate_time_format(time, type)
     valid_time = results[0]
@@ -30,7 +28,6 @@ def test__validate_time_format_should_return_false_and_time_out_of_range_when_va
 def test__validate_time_format_should_return_true_when_validating_12_am_start_time():
     time = "12 am"
     type = "Start"
-    family = "A"
 
     results = validate_time_format(time, type)
     valid_time = results[0]
@@ -41,7 +38,6 @@ def test__validate_time_format_should_return_true_when_validating_12_am_start_ti
 def test__validate_time_format_should_return_false_for_fractional_hours_start_time():
     time = "6:15 pm"
     type = "Start"
-    family = "A"
 
     results = validate_time_format(time, type)
     valid_time = results[0]
@@ -166,15 +162,6 @@ def test_should_return_140_for_family_B_given_start_of_5_pm_and_end_of_4_am():
     assert result == 140
 
 
-def test_should_return_140_for_family_B_given_start_of_5_pm_and_end_of_4_am():
-    start = "5 pm"
-    end = "4 am"
-    family = "B"
-
-    result = calculate_price_for_childcare(start, end, family)
-
-    assert result == 140
-
 def test_should_return_90_for_family_C_given_start_of_9_pm_and_end_of_3_am():
     start = "9 pm"
     end = "3 am"
@@ -183,3 +170,12 @@ def test_should_return_90_for_family_C_given_start_of_9_pm_and_end_of_3_am():
     result = calculate_price_for_childcare(start, end, family)
 
     assert result == 90
+
+def test__should_return_189_for_family_C_given_start_of_5_pm_and_end_of_4_am():
+    start = "5 pm"
+    end = "4 am"
+    family = "C"
+
+    result = calculate_price_for_childcare(start, end, family)
+
+    assert result == 189
