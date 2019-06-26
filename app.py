@@ -22,7 +22,6 @@ def calculate_price_for_childcare(start_time, end_time, family):
 
         total_pay = 0
 
-        # while start_time < end_time:
         while start_time != end_time:
             start_time += 1
             if start_time == 24:
