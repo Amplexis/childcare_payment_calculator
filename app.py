@@ -5,8 +5,7 @@ from src.models.messages import *
 def calculate_price_for_childcare(start_time, end_time):
     start_time_results = validate_time_format(start_time, "Start")
     end_time_results = validate_time_format(end_time, "End")
-    print(start_time_results)
-    print(end_time_results)
+
 
     if start_time_results[0] and end_time_results[0]:
         start_time = start_time_results[1]
@@ -25,7 +24,7 @@ def calculate_price_for_childcare(start_time, end_time):
         return total_pay
     else:
         message = ""
-        if start_time_results[0] is False and end_time_results is False:
+        if start_time_results[0] is False and end_time_results[0] is False:
             message += invalid_both
         elif start_time_results[0] is False:
             message += invalid_start_time
