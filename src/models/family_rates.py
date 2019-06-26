@@ -1,5 +1,5 @@
 family_a_rates = {
-    range(17, 25): 15,
+    range(17, 24): 15,
     range(0, 5): 20
 }
 
