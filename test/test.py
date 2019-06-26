@@ -91,3 +91,11 @@ def test__should_return_75_for_family_a_from_5_pm_to_10_pm():
     result = calculate_price_for_childcare(start, end)
 
     assert result == 75
+
+def test__should_return_invalid_start_time_msg_when_calculate_price_for_childcare_is_given_4_pm_start_time():
+    start = "4 pm"
+    end = "6 pm"
+
+    result = calculate_price_for_childcare(start, end)
+
+    assert result == "Start time is invalid"
