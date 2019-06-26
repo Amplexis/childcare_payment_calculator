@@ -11,6 +11,6 @@ family_b_rates = {
 
 family_c_rates = {
     range(17, 22): 21,
-    range(21, 25): 16,
-    range(0, 5): 16
+    range(21, 25): 15,
+    range(0, 5): 15
 }
