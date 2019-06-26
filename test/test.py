@@ -134,3 +134,14 @@ def test__should_return_70_for_family_A_given_start_of_9_pm_and_end_of_1_am():
     result = calculate_price_for_childcare(start, end, family)
 
     assert result == 70
+
+
+def test_should_return_190_for_family_A_given_start_of_5_pm_and_end_of_4_am():
+    start = "5 pm"
+    end = "4 am"
+    family = "A"
+
+    result = calculate_price_for_childcare(start, end, family)
+
+    assert result == 190
+    
