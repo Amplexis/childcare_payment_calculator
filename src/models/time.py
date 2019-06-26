@@ -4,7 +4,7 @@ def convert_time(end_time):
     return end_time
 
 
-def validate_time(time_to_validate):
+def validate_time_format(time_to_validate, type):
     results = []
     valid_time = False
 
@@ -22,11 +22,33 @@ def validate_time(time_to_validate):
     results.append(valid)
 
     if valid_time:
-        time = valid_time.tm_hour
-        if time >= 17 or time <= 3:
-            results.append(valid_time.tm_hour)
-        else:
+        result = validate_time_range(valid_time, type)
+
+        if result is False:
             results[0] = False
             results.append("Time is out of range")
+        else:
+            results.append(result)
 
     return results
+
+
+def validate_time_range(valid_time, type):
+    time = valid_time.tm_hour
+
+    if type == "Start":
+        if time >= 17 or time <= 3:
+            result = time
+        else:
+            result = False
+    else:
+        if time >= 18 or time <= 4:
+            result = time
+        else:
+            result = False
+
+    return result
+
+
+
+
