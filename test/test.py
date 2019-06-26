@@ -72,3 +72,13 @@ def test__validate_time_format_should_return_false_for_5_pm_end_time():
     valid_time = results[0]
 
     assert not valid_time
+
+
+def test__validate_time_format_should_return_false_for_5_pm_end_time():
+    time = "5 pm"
+    type = "End"
+
+    results = validate_time_format(time, type)
+    valid_time = results[0]
+
+    assert not valid_time
